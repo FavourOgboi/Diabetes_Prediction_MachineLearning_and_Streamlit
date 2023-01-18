@@ -14,6 +14,11 @@ trained_model = "trained_model.sav"
 # use the current working directory to define the path of the diabetes.csv file
 datafile = "diabetes.csv"
 
+@st.cache
+def loadimage(imagefile):
+    img = Image.open(imagefile)
+    return img
+
 def main():
     st.title("Diabetes Prediction System")
     st.write("Welcome to our diabetes prediction app. We have created this app to help predict whether an individual has diabetes based on various factors such as number of pregnancies, glucose level, blood pressure, skin thickness, insulin level, BMI, diabetes pedigree function, and age.")
