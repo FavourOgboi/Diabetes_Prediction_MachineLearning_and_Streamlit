@@ -45,17 +45,12 @@ def main():
         plt.show()
         
         st.write("\n This code creates a bar plot that shows the distribution of patients with diabetes (outcome = 1) and without diabetes (outcome = 0) in the dataset")
-        
-        st.write("
-                 \n
-                 ")
+        st.write("\n")
         fig = px.bar(datafile, x="Outcome", y="Age", color='Outcome',title="Age Distribution by Outcome")
         fig.show()
         st.write("This will create a interactive bar plot showing the distribution of patients with diabetes (outcome = 1) and without diabetes (outcome = 0) by Age.")
                  
-        st.write("
-                 \n
-                 ")
+        st.write("\n")
                  
         st.write("Correlation As you can tell from the analysis the values in some columns are more closely related to the outcome compared to other columns. \n" + "This relationship is often expressed numerically using a measure called the _correlation coefficient_, which can be computed using the .corr method of a Pandas series.\n")
                  
