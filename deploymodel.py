@@ -51,9 +51,6 @@ def main():
     elif choice == "PredictionApp":
         st.subheader("PredictionApp")
 
-        # loading the saved model
-        loaded_model = pickle.load(open(trained_model,"rb"))
-
         Pregnancies = st.text_input("Number Of Pregnancies")
         Glucose = st.text_input("glucose Level")
         BloodPressure = st.text_input("Blood pressure value")
@@ -62,6 +59,9 @@ def main():
         BMI = st.text_input("BMI Level")
         DiabetesPedigreeFunction = st.text_input("Diabetes Pedigree Function")
         Age = st.text_input("Age")
+        
+        # loading the saved model
+        loaded_model = pickle.load(open(trained_model,"rb"))
 
         if st.button("Predict"):
             prediction = loaded_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
