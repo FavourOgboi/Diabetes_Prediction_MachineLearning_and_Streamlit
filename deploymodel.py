@@ -3,6 +3,9 @@ from PIL import Image
 import pandas as pd
 import pickle
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
 
 # use the current working directory to define the path of the images folder
 image_folder = "images"
@@ -31,15 +34,40 @@ def main():
         st.subheader("Dataset")
         df = pd.read_csv(datafile)
         st.dataframe(df)
-
-        st.write("Correlation As you can tell from the analysis the values in some columns are more closely related to the outcome compared to other columns." +
         
-        "This relationship is often expressed numerically using a measure called the _correlation coefficient_, which can be computed using the .corr method of a Pandas series.")
+        # Use Seaborn to create a bar plot of the number of patients with diabetes (outcome = 1) and without diabetes (outcome = 0)
+        sns.countplot(x='Outcome', data=datafile)
+        plt.xlabel('Outcome')
+        plt.ylabel('Count')
+        plt.title('Diabetes Outcome Distribution')
 
+        # Show the plot
+        plt.show()
+        
+        st.write("\n This code creates a bar plot that shows the distribution of patients with diabetes (outcome = 1) and without diabetes (outcome = 0) in the dataset")
+        
+        st.write("
+                 \n
+                 ")
+        fig = px.bar(datafile, x="Outcome", y="Age", color='Outcome',title="Age Distribution by Outcome")
+        fig.show()
+        st.write("This will create a interactive bar plot showing the distribution of patients with diabetes (outcome = 1) and without diabetes (outcome = 0) by Age.")
+                 
+        st.write("
+                 \n
+                 ")
+                 
+        st.write("Correlation As you can tell from the analysis the values in some columns are more closely related to the outcome compared to other columns. \n" + "This relationship is often expressed numerically using a measure called the _correlation coefficient_, which can be computed using the .corr method of a Pandas series.\n")
+                 
         # use the current working directory to define the path of the corr.PNG file
         imagefile = f"{image_folder}/corr.PNG"
         st.image(loadimage(imagefile),width = 285)
-
+                 
+        st.write("The dataset contains various information such as patient's number of pregnancies, glucose level, blood pressure, skin thickness, insulin level, BMI, diabetes pedigree function, age, and whether or not the patient has diabetes (outcome).")
+        st.write(" To generalize it with the data of the world today, one can say that diabetes is a growing global health concern. \n According to the World Health Organization, an estimated 422 million adults were living with diabetes in 2014, and this number is projected to increase to 629 million by 2045.")
+        st.write("\n")
+        st.write("Diabetes is a leading cause of death and disability, and is a major contributor to cardiovascular disease, kidney failure, blindness, and amputations. \n Therefore, understanding and analyzing data such as the diabetes dataset can help in the development of effective strategies for the prevention, early detection, and management of diabetes, and ultimately improving the health outcomes of individuals with diabetes.")
+                 
     elif choice == "PredictionApp":
         st.subheader("PredictionApp")
 
