@@ -11,8 +11,8 @@ datafile = "diabetes.csv"
 # use the current working directory to define the path of the trained_model.sav file
 trained_model = "trained_model.sav"
 
-# use the current working directory to define the path of the diabetes.csv file
-datafile = "diabetes.csv"
+# use the current working directory to define the path of the images folder
+image_folder = "images"
 
 @st.cache
 def loadimage(imagefile):
