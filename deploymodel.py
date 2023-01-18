@@ -86,10 +86,8 @@ def main():
         imagefile = f"{image_folder}/pexels-artem-podrez-6823763.jpg"
         st.image(loadimage(imagefile),width = 500)
 
-        txtfile = "about.txt"
-        with open(txtfile, "r") as f:
-            about_text = f.read()
-        st.write(about_text)
+        txtfile = ("Diabetes mellitus is a condition defined by persistently high levels of sugar (glucose) in the blood There are several types of diabetes. The two most common are called type 1 diabetes and type 2 diabetes.During digestion, food is broken down into its basic components. Carbohydrates are broken down into simple sugars, primarily glucose. Glucose is a critically important source of energy for the body cells.To provide energy to the cells, glucose needs to leave the bloodstream and get inside the cells.An organ in the abdomen called the pancreas produces a hormone called insulin, which is essential to helping glucose get into the body's cells. In a person without diabetes,the pancreas produces more insulin whenever blood levels of glucose rise (for example, after a meal),and the insulin signals the body's cells to take in the glucose. In diabetes,either the pancreas's ability to produce insulin or the cells' response to insulin is altered.The purpose of this app is to deploy a model that can predict if a person is diabetic or not based of the information given by th user.")
+        st.write(txtfile)
 
 if __name__ == "__main__":
     main()
