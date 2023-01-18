@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-import seaborn as sns
-import plotly.express as px
+from PIL import Image
+
 
 # use the current working directory to define the path of the diabetes.csv file
 datafile = "diabetes.csv"
