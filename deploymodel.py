@@ -10,7 +10,7 @@ from PIL import Image
 datafile = "diabetes.csv"
 
 # use the current working directory to define the path of the trained_model.sav file
-trained_model = "trained_model.sav"
+trained_model = "trained_model.pkl"
 
 # use the current working directory to define the path of the images folder
 image_folder = "images"
@@ -62,7 +62,7 @@ def main():
         Age = st.text_input("Age")
         
         # loading the saved model
-        loaded_model = joblib.load(trained_model)
+        loaded_model = pickle.load(open(trained_model, 'rb'))
 
         if st.button("Predict"):
             prediction = loaded_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
