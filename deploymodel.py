@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import joblib
 import numpy as np
 from PIL import Image
 
@@ -61,7 +62,7 @@ def main():
         Age = st.text_input("Age")
         
         # loading the saved model
-        loaded_model = pickle.load(open(trained_model,"rb"))
+        loaded_model = joblib.load(trained_model)
 
         if st.button("Predict"):
             prediction = loaded_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
