@@ -49,7 +49,7 @@ def main():
         st.write("Diabetes is a leading cause of death and disability, and is a major contributor to cardiovascular disease, kidney failure, blindness, and amputations. \n Therefore, understanding and analyzing data such as the diabetes dataset can help in the development of effective strategies for the prevention, early detection, and management of diabetes, and ultimately improving the health outcomes of individuals with diabetes.")
     
     elif choice == "PredictionApp":
-        st.subheader("PredictionApp")
+        st.subheader("Prediction")
 
         Pregnancies = st.text_input("Number Of Pregnancies")
         Glucose = st.text_input("glucose Level")
