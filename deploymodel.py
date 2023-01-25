@@ -20,7 +20,7 @@ def loadimage(imagefile):
     return img
 
 def main():
-    st.title("Diabetes Prediction System")
+    st.title("Diabetes Risk Prediction System")
     st.write("Welcome to our diabetes prediction app. We have created this app to help predict whether an individual has diabetes based on various factors such as number of pregnancies, glucose level, blood pressure, skin thickness, insulin level, BMI, diabetes pedigree function, and age.")
     st.write("Our app utilizes a machine learning model that was trained on a diabetes dataset to make predictions. The dataset used in this app is from Kaggle and contains information about patients with and without diabetes.")
 
@@ -48,7 +48,7 @@ def main():
         st.write("\n")
         st.write("Diabetes is a leading cause of death and disability, and is a major contributor to cardiovascular disease, kidney failure, blindness, and amputations. \n Therefore, understanding and analyzing data such as the diabetes dataset can help in the development of effective strategies for the prevention, early detection, and management of diabetes, and ultimately improving the health outcomes of individuals with diabetes.")
     
-    elif choice == "PredictionApp":
+    elif choice == "Prediction":
         st.subheader("Prediction")
 
         Pregnancies = st.text_input("Number Of Pregnancies")
@@ -68,7 +68,7 @@ def main():
             if prediction == 0:
                 st.success("The patient does not have diabetes.")
             else:
-                st.warning("The patient has diabetes.")
+                st.warning("The patient is likely to have diabetes.")
 
     elif choice == "About":
         st.subheader("About")
