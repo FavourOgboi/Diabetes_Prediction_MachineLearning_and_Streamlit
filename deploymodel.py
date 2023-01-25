@@ -24,7 +24,7 @@ def main():
     st.write("Welcome to our diabetes prediction app. We have created this app to help predict whether an individual has diabetes based on various factors such as number of pregnancies, glucose level, blood pressure, skin thickness, insulin level, BMI, diabetes pedigree function, and age.")
     st.write("Our app utilizes a machine learning model that was trained on a diabetes dataset to make predictions. The dataset used in this app is from Kaggle and contains information about patients with and without diabetes.")
 
-    menu = ["About","Dataset","PredictionApp"]
+    menu = ["About","Dataset","Prediction"]
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Dataset":
